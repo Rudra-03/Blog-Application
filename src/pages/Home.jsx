@@ -3,7 +3,7 @@ import appwriteService from "../appwrite/config";
 import { Container, PostCard } from "../components";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import {Blog} from "../assets/blog"
+import blog from "../assets/1st.jpg";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -20,7 +20,7 @@ function Home() {
 
   if (!authStatus) {
     return (
-      <div className="w-full py-8 mt-4">
+      <div className="w-full py-8">
         <Container>
           {/* <div className="flex flex-wrap">
                         <div className="p-2 w-full">
@@ -29,27 +29,29 @@ function Home() {
                             </h1>
                         </div>
                     </div> */}
-          <div className="flex m-5 flex-wrap gap-x-20 gap-y-10 justify-center">
-            <div className="">
-              <h1 className="text-4xl ">WELCOME TO YOUR BLOG APP</h1>
-              <div className="mt-5 flex gap-4 justify-center">
+          <div className="flex flex-wrap gap-x-20 gap-y-20 justify-center items-center">
+            <div className="flex flex-col align-start text-center">
+              <div>
+                <h1 className="text-4xl pt-4 font-bold">WELCOME TO YOUR BLOG APP</h1>
+              </div>
+              <div className="mt-5 flex gap-4 justify-center sm:justify-start">
                 <button
-                  className="bg-black text-white px-4 py-2 rounded-lg"
+                  className=" bg-yellow-500 text-black hover:bg-yellow-600 px-4 py-2 rounded-lg font-semibold"
                   onClick={() => navigate("/login")}
                 >
                   Login
                 </button>
                 <button
-                  className="bg-black text-white px-4 py-2 rounded-lg"
+                  className=" bg-yellow-500 text-black hover:bg-yellow-600 px-4 py-2 rounded-lg font-semibold"
                   onClick={() => navigate("/signup")}
                 >
                   Signup
                 </button>
               </div>
             </div>
-            {/* <div className="flex flex-grow lg:justify-center ">
-             <img src="https://i.ibb.co/6b6Bx0t/1.png" alt="" />
-            </div> */}
+            <div className="flex flex-grow justify-center sm:pr-14 sm:justify-end">
+              <img src={blog} alt="" className="rounded-xl max-w-sm" />
+            </div>
           </div>
           <div></div>
         </Container>

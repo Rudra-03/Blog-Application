@@ -38,7 +38,7 @@ function Header() {
 
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow bg-black text-yellow-400 border-b-amber-500 border-b-2'>
       <Container>
         <nav className='flex'>
           <div className='mr-4'>
@@ -47,13 +47,13 @@ function Header() {
 
               </Link>
           </div>
-          <ul className='flex ml-auto gap-2'>
+          <ul className='sm:flex ml-auto gap-2 hidden'>
             {navItems.map((item) => 
             item.active ? (
               <li key={item.name}>
                 <button
                 onClick={() => navigate(item.slug)}
-                className='inline-bock px-6 py-2 duration-200 bg-blue-700 hover:bg-blue-500 rounded-full text-white text-sm'
+                className='inline-bock px-6 py-2 duration-200  bg-yellow-500 text-black hover:bg-yellow-600 rounded-full text-md font-semibold'
                 >{item.name}</button>
               </li>
             ) : null
